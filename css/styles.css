@@ -1,0 +1,286 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+:root {
+  --white: rgb(255, 255, 255);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+/*navbar and its background color */
+#navbar::before {
+  background-color: rgb(51, 53, 54, 0.6);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.9;
+}
+#navbar {
+  display: flex;
+  top: 0;
+  position: sticky; /* ye karne ke liye top se zero karna bhi zaroori hai  */
+  align-items: center;
+  z-index: 1; /*so that it doesn't come behind any object or pic or any element */
+}
+#logo {
+  width: 102px;
+}
+#logo img {
+  width: 78px;
+}
+.navigation {
+  display: flex;
+  color: var(--white);
+  font-weight: 900;
+  padding: 27px 0px;
+  align-items: center;
+  justify-content: center;
+}
+.navigation a:hover {
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+nav ul li {
+  list-style: none;
+}
+.navigation a {
+  /* display: block; --> so that we can give padding to the a element which is inline but our website is still working :) */
+  text-decoration: none;
+  border-radius: 20px;
+  color: var(--white);
+  font-size: 1.2rem;
+  padding: 3px 21px;
+}
+
+/*Home Section  */
+#container {
+  /* border: 2px solid red; */
+  padding: 3px 200px;
+  height: 363px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* position: relative;  --> with this the image will only be shown behind container which we don't eant */
+}
+#container::before {
+  background: url("/images/bg2.jpg") no-repeat center center/cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 460px; /* -->always set like this,it will adjust the height of bg image but it will not affect your height since it's height is relavent to it's parent  */
+  /* height: 50%; --> don't use this because it will cause problem while investing s */
+  z-index: -2; /*so that it can go before the black color in bg of navigation bar too*/
+  opacity: 0.87;
+}
+#container h1 {
+  color: var(--white);
+}
+#para {
+  font-size: 1.3rem;
+  color: var(--white);
+  /* font-weight: bold; */
+}
+#btn {
+  /*lind of utility class because we can use this on some other places also */
+  background-color: #b83018;
+  color: var(--white);
+  border: 2px solid var(--white);
+  border-radius: 12px;
+  font-size: 18px;
+  margin: 17px;
+  padding: 6px 20px;
+  cursor: pointer;
+}
+#btn:hover {
+  background-color: #a72c17;
+}
+
+/* Services Section */
+
+#container2 {
+  background-color: rgb(255, 255, 255);
+  /* padding: 34px 10px;  */
+}
+#info {
+  display: flex;
+  padding: 34px;
+  /* align-items: center;
+    justify-content: center; */
+}
+#info .box {
+  background-color: rgb(236, 248, 255);
+  /* border: 2px solid #aeaeae; */
+  border-radius: 31px;
+  padding: 28px;
+  margin: 3px 25px;
+  box-shadow: 0px 0px 1em rgb(0 0 0 / 90%);
+}
+#info .box img {
+  display: block;
+  margin: 5px auto;
+}
+#png1 {
+  width: 173px;
+}
+#png2 {
+  width: 120px;
+  height: 87px;
+}
+#png3 {
+  width: 87px;
+}
+
+/* Utility classes  */
+.primary-heading {
+  /* we can make these kind of utility classes,for styling other sane kind of headings */
+  padding: 12px;
+  font-size: 2.7rem;
+}
+.center {
+  text-align: center;
+}
+.Secondary-heading {
+  padding-bottom: 12px;
+  font-size: 1.7rem;
+}
+
+/* Clients Section */
+#container3 {
+  position: relative;
+  border: 2px solid;
+  padding: 21px;
+  height: 240px;
+}
+#container3::before {
+  background: url("/images/bg1.jpg") no-repeat center center/cover;
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.3;
+}
+#logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 27px auto;
+}
+#container3 li {
+  list-style: none;
+  margin: 0px 13px;
+  padding: 3px 11px;
+}
+/* .container3 li a{
+    margin: 0px 13px;
+    padding: 3px 11px;
+}  */
+#container3 #logo3li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+#logo1 {
+  width: 69px;
+}
+#logo2 {
+  width: 89px;
+  margin-top: 15px;
+}
+#logo3 {
+  width: 141px;
+}
+#logo4 {
+  width: 79px;
+}
+
+#form-container {
+  /* display: block;  if we do inline-block here then we can not use margin auto */
+  /* width: 100%; just to reduce size of the container */
+  position: relative;
+}
+#form-container::before {
+  background: url("/images/contact.jpg") no-repeat center center/cover;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; /*so that it can go before the black color in bg of navigation bar too*/
+  opacity: 0.47;
+}
+.contact-box {
+  /* width: 50%;
+    margin: auto; or you can also make it flex to easily center it */
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 23px;
+}
+/* .form { /* --> if you don't want image in background then you can use this to provide the styling in bg  
+    width: 500px;
+    background-color: #dddddd;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+} */
+
+.contact-box form {
+  width: 40%;
+}
+.contact-box label {
+  font-size: 21px;
+}
+
+.contact-box input,
+.contact-box textarea {
+  margin: 5px 0px;
+  padding: 7px 10px;
+  width: 100%;
+  border-radius: 8px;
+  font-size: 21px;
+  box-sizing: border-box; /*imp beacause by giving margin and padding the input and text boxes were going out of the form , try again by unchecking box-sizing and you will understand  */
+}
+input[type="submit"] {
+  margin: 13px 0px;
+  padding: 12px 20px;
+  width: 100%;
+  background-color: rgba(204, 35, 29, 0.884);
+  border: none;
+  border-radius: 4px;
+  box-sizing: border-box; /* so that box do not go outside container */
+}
+.submit {
+  width: 88%;
+  margin: 0px auto;
+  box-sizing: border-box;
+}
+input[type="submit"]:hover {
+  background-color: rgb(209, 17, 4);
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+}
